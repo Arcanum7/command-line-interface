@@ -29,9 +29,9 @@ private:
     std::string name;
     void *implicitArg;
 public:
-    Command(command_t fcn, std::string name, void *implicitArg);
+    Command(command_t fcn, const std::string &name, void *implicitArg);
     void execute();
-    int match(std::string name);
+    int match(const std::string &name);
 };
 
 #endif

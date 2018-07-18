@@ -27,13 +27,13 @@
 class CommandProcessor {
 public:
     CommandProcessor(CommandProcessorInterface *interface);
-    void registerCommand(std::string name, command_t command, void* arg);
+    void registerCommand(const std::string &name, command_t command, void* arg);
 private:
     CommandProcessorInterface *interface;
     std::string buffer;
     std::vector<Command> commands;
 protected:
-    int parseCommand(std::string name);
+    int parseCommand(const std::string &name);
     int receiveCharacter(char character);
     friend class CommandProcessorInterface;
 };

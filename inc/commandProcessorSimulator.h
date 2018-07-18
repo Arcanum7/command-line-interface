@@ -27,7 +27,7 @@ class CommandProcessorSimulator: public CommandProcessorInterface {
 public: 
     CommandProcessorSimulator();
     ~CommandProcessorSimulator();
-    virtual int asyncWrite(std::string str);
+    virtual int asyncWrite(const std::string &str);
 private:
     std::thread thread;
     bool runThread;

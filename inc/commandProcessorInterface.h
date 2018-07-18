@@ -25,10 +25,10 @@ class CommandProcessor;
 class CommandProcessorInterface {
 public:
     void setProcessor(CommandProcessor *processor);
-    virtual int asyncWrite(std::string str) = 0;
+    virtual int asyncWrite(const std::string &str) = 0;
 protected:
     CommandProcessor *commandProcessor;
-    int parseCommand(std::string name);
+    int parseCommand(const std::string &name);
     int receiveCharacter(char character);
 };
 

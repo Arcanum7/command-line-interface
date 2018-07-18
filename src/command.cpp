@@ -18,7 +18,7 @@
 
 #include "command.h"
 
-Command::Command(command_t fcn, std::string name, void *implicitArg): 
+Command::Command(command_t fcn, const std::string &name, void *implicitArg): 
     fcn(fcn),
     name(name),
     implicitArg(implicitArg)
@@ -32,7 +32,7 @@ void Command::execute() {
     } 
 }
 
-int Command::match(std::string commandName) {
+int Command::match(const std::string &commandName) {
     if (name.compare(commandName) == 0)
         return 1;
     return 0;

@@ -23,7 +23,7 @@ void CommandProcessorInterface::setProcessor(CommandProcessor *processor) {
     commandProcessor = processor;
 }
 
-int CommandProcessorInterface::parseCommand(std::string name) {
+int CommandProcessorInterface::parseCommand(const std::string &name) {
     return commandProcessor->parseCommand(name);
 }
 

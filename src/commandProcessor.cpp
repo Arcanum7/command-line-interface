@@ -10,7 +10,7 @@ CommandProcessor::CommandProcessor(CommandProcessorInterface *intf) {
     interface = intf;
 }
 
-int CommandProcessor::parseCommand(std::string name) {
+int CommandProcessor::parseCommand(const std::string &name) {
     LOG("%s:\tparsing command %s\n", __func__, name.c_str());
     bool found = false;
     for (Command command : commands) {
@@ -35,7 +35,7 @@ int CommandProcessor::receiveCharacter(char character) {
     return 0;
 }
 
-void CommandProcessor::registerCommand(std::string name, command_t command, void *arg) {
+void CommandProcessor::registerCommand(const std::string &name, command_t command, void *arg) {
     // register command inside the command vector
     commands.push_back(Command(command, name, arg));
 }

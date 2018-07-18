@@ -24,7 +24,7 @@ CommandProcessorSimulator::~CommandProcessorSimulator() {
     runThread = false;
 }
 
-int CommandProcessorSimulator::asyncWrite(std::string str) {
+int CommandProcessorSimulator::asyncWrite(const std::string &str) {
     std::cout << str << std::endl;
     return 0;
 }
