@@ -28,6 +28,7 @@ class CommandProcessor {
 public:
     CommandProcessor(CommandProcessorInterface *interface);
     void registerCommand(const std::string &name, command_t command, void* arg);
+    void response(const std::string &str);
 private:
     CommandProcessorInterface *interface;
     std::string buffer;

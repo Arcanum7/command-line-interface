@@ -37,5 +37,9 @@ int CommandProcessor::receiveCharacter(char character) {
 
 void CommandProcessor::registerCommand(const std::string &name, command_t command, void *arg) {
     // register command inside the command vector
-    commands.push_back(Command(command, name, arg));
+    commands.push_back(Command(command, name, this, arg));
+}
+
+void CommandProcessor::response(const std::string &str) {
+    interface->asyncWrite(str);
 }

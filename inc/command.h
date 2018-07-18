@@ -21,15 +21,17 @@
 
 #include <string>
 
-typedef void (*command_t)(void *);
+class CommandProcessor;
+typedef void (*command_t)(CommandProcessor *, void *);
 
 class Command {
 private:
     command_t fcn;
     std::string name;
+    CommandProcessor *processor;
     void *implicitArg;
 public:
-    Command(command_t fcn, const std::string &name, void *implicitArg);
+    Command(command_t fcn, const std::string &name, CommandProcessor *processor, void *implicitArg);
     void execute();
     int match(const std::string &name);
 };

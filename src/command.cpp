@@ -18,9 +18,10 @@
 
 #include "command.h"
 
-Command::Command(command_t fcn, const std::string &name, void *implicitArg): 
+Command::Command(command_t fcn, const std::string &name, CommandProcessor *processor, void *implicitArg): 
     fcn(fcn),
     name(name),
+    processor(processor),
     implicitArg(implicitArg)
 {
 
@@ -28,7 +29,7 @@ Command::Command(command_t fcn, const std::string &name, void *implicitArg):
 
 void Command::execute() {
     if (fcn != nullptr) {
-        fcn(implicitArg);
+        fcn(processor, implicitArg);
     } 
 }
 

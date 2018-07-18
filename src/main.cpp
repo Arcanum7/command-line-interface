@@ -1,8 +1,8 @@
 #include "commandProcessor.h"
 #include "commandProcessorSimulator.h"
 
-static void testFunc(void *arg) {
-    printf("this is really cool!\n");
+static void testFunc(CommandProcessor *processor, void *arg) {
+    processor->response("this is really cool!\n");
 }
 
 int main(int argc, char *argv[]) {
